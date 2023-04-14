@@ -1,4 +1,2 @@
-# Covid19-Project
---- Demonstrating EDA on a covid19 dataset using BigQuery.
-
---- Graph shows relationship between new covid19 cases in relation to new vaccines
+# Welcome to my SQL portfolio!
+This code repository contains examples of SQL I've written. Feel free to take a look and reach out if you have any questions.
