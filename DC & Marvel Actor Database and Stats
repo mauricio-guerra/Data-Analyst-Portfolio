@@ -1,0 +1,50 @@
+/* Created a table about with famous actors and their age */
+
+CREATE TABLE famous_people (id INTEGER PRIMARY KEY AUTOINCREMENT, fullname TEXT, age INTEGER);
+
+INSERT INTO famous_people (fullname, age) VALUES ("Ben Affleck", 50);
+INSERT INTO famous_people (fullname, age) VALUES ("Henry Cavill", 40);
+INSERT INTO famous_people (fullname, age) VALUES ("Gal Gadot", 38);
+INSERT INTO famous_people (fullname, age) VALUES ("Zachary Levi", 42);
+INSERT INTO famous_people (fullname, age) VALUES ("Christian Bale", 49);
+INSERT INTO famous_people (fullname, age) VALUES ("Ryan Reynolds", 46);
+INSERT INTO famous_people (fullname, age) VALUES ("Robert Downey Jr", 58);
+INSERT INTO famous_people (fullname, age) VALUES ("Chris Evans", 42);
+INSERT INTO famous_people (fullname, age) VALUES ("Scarlett Johansson", 38);
+
+
+/* Created a table specifically about the actors that are in the DC cinematic universe */
+
+CREATE TABLE dc (id INTEGER PRIMARY KEY AUTOINCREMENT, dc_actor_id INTEGER);
+
+INSERT INTO dc (dc_actor_id) VALUES (1);
+INSERT INTO dc (dc_actor_id) VALUES (2);
+INSERT INTO dc (dc_actor_id) VALUES (3);
+INSERT INTO dc (dc_actor_id) VALUES (4);
+INSERT INTO dc (dc_actor_id) VALUES (5);
+INSERT INTO dc (dc_actor_id) VALUES (6);
+
+
+/* Created a table specifically about the actors that are in the Marvel cinematic universe */
+
+CREATE TABLE marvel (id INTEGER PRIMARY KEY AUTOINCREMENT, marvel_actor_id INTEGER);
+
+INSERT INTO marvel (marvel_actor_id) VALUES (4);
+INSERT INTO marvel (marvel_actor_id) VALUES (5);
+INSERT INTO marvel (marvel_actor_id) VALUES (6);
+INSERT INTO marvel (marvel_actor_id) VALUES (7);
+INSERT INTO marvel (marvel_actor_id) VALUES (8);
+INSERT INTO marvel (marvel_actor_id) VALUES (9);
+
+
+/* Answer Question: Which actors were with DC and which ones were with Marvel? */
+
+SELECT famous_people.fullname
+FROM dc
+JOIN famous_people
+ON dc.dc_actor_id = famous_people.id;
+
+SELECT famous_people.fullname
+FROM marvel
+JOIN famous_people
+ON marvel.marvel_actor_id = famous_people.id;
