@@ -48,3 +48,11 @@ SELECT famous_people.fullname
 FROM marvel
 JOIN famous_people
 ON marvel.marvel_actor_id = famous_people.id;
+
+
+/* Answer Question: Which actors were in both dc and marvel movies? */
+
+SELECT famous_people.fullname
+FROM dc, marvel
+JOIN famous_people
+ON dc.dc_actor_id = famous_people.id AND marvel.marvel_actor_id = famous_people.id
